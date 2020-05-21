@@ -8,7 +8,7 @@
 *
 * 1. To create a variable we use the keyword, var, followed by a name (id or alias) for our
 * variable.
-*
+*i just wanna say it
 * 2. There are 2 phases of using variables: declaration and initialization (or assignment).
 */
 
