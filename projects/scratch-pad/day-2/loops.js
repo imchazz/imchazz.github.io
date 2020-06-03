@@ -13,8 +13,9 @@
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
   
-  
+  //loop through the array and print every value.
   for(var i = 0; i < array.length; i++){
+    //prints value at i using bracket notation
     console.log(array[i]);
   }
   
@@ -28,7 +29,7 @@ function printArrayValues(array) {
 function printArrayValuesInReverse(array) {
   // YOUR CODE BELOW HERE //
   
-  
+  //i starts at the end of the array, and decrements.
   for(var i = array.length-1; i > -1; i--){
     console.log(array[i]);
   }
@@ -43,7 +44,7 @@ function printArrayValuesInReverse(array) {
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   
-  
+  //returns the keys of object parameter
   return Object.keys(object);
   
   
@@ -57,6 +58,7 @@ function getObjectKeys(object) {
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   
+  //loops through object parameter, x represents keys.
   for(var x in object){
     console.log(x);
   }
@@ -71,6 +73,7 @@ function printObjectKeys(object) {
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
   
+  //returns an array of parameter object's values
   return Object.values(object);
   
   
@@ -84,7 +87,9 @@ function getObjectValues(object) {
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
   
+  //loop through object values
   for(var x in object){
+    //print each value 
     console.log(object[x]);
   }
   
@@ -98,6 +103,7 @@ function printObjectValues(object) {
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
   
+  //return object's keys as an array, but using the length method to return that array's length.
   return Object.keys(object).length;
   
   
@@ -111,13 +117,17 @@ function getObjectLength(object) {
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
 
+//new array variable
 var keys = [];
 
+//pushes each object key to keys array
 for (var key in object) {
     keys.push(key);
   }
 
+//with the new keys array, start at the end of it and decrement while printing each value
   for (var i = keys.length - 1; i >= 0; i--) {
+    //assign value to new variable for cleanliness
     var value = object[keys[i]];
     console.log(value);
   }

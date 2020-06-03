@@ -14,6 +14,7 @@
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
+    //compares value with base, prints true if value is larger in size; prints false otherwise.
     return function (value){
         if (value > base){
             return true;
@@ -53,10 +54,14 @@ function createLessThanFilter(base) {
  
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
+    
+    
     return function (string){
+        //if the startswith letter is the same as the first letter in string, both made lowercase, then return true.
         if(string[0].toLowerCase() === startsWith.toLowerCase()){
             return true;
         } else {
+            //otherwise false
             return false
         }
     }
@@ -76,6 +81,7 @@ function createEndsWithFilter(endsWith) {
     
     
     return  function (string){
+        //last character in string is represented with string.length-1 which goes in a bracket.. then compared to the endswith character.
         if(string[string.length-1].toLowerCase() === endsWith[endsWith.length-1].toLowerCase()){
             return true;
         } else {
@@ -97,10 +103,15 @@ function createEndsWithFilter(endsWith) {
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
     
+    //empty array
     var arr = [];
+    
+    //loop through strings parameter
     for(var i = 0; i < strings.length; i++){
-    arr.push(modify(strings[i]));
+        //push each string, modified with the modify parameter, to the created array.
+        arr.push(modify(strings[i]));
     }
+    //finally, return the new array.
     return arr;
     
     

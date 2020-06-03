@@ -23,13 +23,19 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
+    
+    //new array variable
     var arr = [];
+    
     if(start < end){
+        //print each value from start to end, which will print forwards.
         for(var i = start; i <= end; i++)
             arr.push(i);
+        //print each value from start to end, which will print backwards.
     } else if(start > end){
         for(var i = start; i >= end; i--)
             arr.push(i);
+        //nothing
     } else {
         return arr;
     }

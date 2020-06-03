@@ -14,7 +14,8 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-
+        
+    //uses the isArray method.
     return Array.isArray(value);
     
     
@@ -45,6 +46,7 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
+    //check and make sure value is an object (which is a collection), not an array, not null, not a date, or just if the value is an array (which is a collection)
     return ((typeof value === "object" && !Array.isArray(value) && value !== null && !(value instanceof Date))||Array.isArray(value));
     
     // YOUR CODE ABOVE HERE //
@@ -72,24 +74,25 @@ function isCollection(value) {
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
     
+    //isarray method
     if(Array.isArray(value))
         return "array";
-    else if(value === undefined)
+    else if(value === undefined) //if undefined , print undefined
         return "undefined";
-    else if(typeof(value) === 'number')
+    else if(typeof(value) === 'number') //typeof method will return number if its a number.
         return "number";
-    else if(value === false || value === true)
+    else if(value === false || value === true) //only booleans can be true or false, so.. print boolean if either one is true.
         return "boolean";
-    else if(value == null && value !== undefined)
+    else if(value == null && value !== undefined) //undefined is also null, so we need to make sure it is not undefined and equal to null.
         return "null";
-    else if(typeof value === 'function')
+    else if(typeof value === 'function') //typeof will return function if its a function
         return "function";
-    else if(value instanceof Date)
+    else if(value instanceof Date) //instanceof Date will return true if value is a date.
         return "date";
-    else if(typeof(value) === 'object')
+    else if(typeof(value) === 'object') //typeof object will return true if its an object, after all the previous if statements are passed (because other things can be objects like arrays)
         return "object";
     else
-        return "string";
+        return "string"; //string is the only thing left, so just put it in the else statement.
 
     // YOUR CODE ABOVE HERE //
 }

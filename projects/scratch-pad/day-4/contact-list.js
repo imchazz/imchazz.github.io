@@ -35,11 +35,14 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
+    
+    //create new object with the property parameters.
     var newObject = {
         id: id,
         nameFirst: nameFirst,
         nameLast: nameLast
     };
+    //return it
     return newObject;
 } 
 
@@ -55,12 +58,15 @@ function makeContactList() {
         length: function() {
             return contacts.length;
         },
+        //push contact param to contacts array
         addContact: function(contact){
             contacts.push(contact);
         },
         findContact: function(fullName){
+            //create array with fullName param, parsing at spaces.
             var full = fullName.split(" ");
             
+            //loop through contacts array and deciding if any names are equal, then return the object if found. undefined if otherwise.
             for(var i = 0; i < contacts.length; i++){
                 if(full[0].toLowerCase() === contacts[i].nameFirst.toLowerCase() || full[1].toLowerCase() === contacts[i].nameFirst.toLowerCase())
                     return contacts[i];
@@ -69,13 +75,17 @@ function makeContactList() {
             }
         },
         removeContact: function(contact){
+            //loop through contacts and if and of contacts elements match the contact parameter, splice(remove) said param
             for(var i = 0; i < contacts.length; i++){
                 if(contact === contacts[i])
                     contacts.splice(i,1);
             }
         },
         printAllContactNames: function(){
+            //new string variable
             var listOfNames = "";
+            
+            //loop through contacts to print all values.
             for(var i = 0; i < contacts.length; i++){
                 //concatenate first and last name and add them to new listofnames array.
                 listOfNames += (contacts[i].nameFirst + " " + contacts[i].nameLast);
@@ -84,6 +94,7 @@ function makeContactList() {
                 if(i < contacts.length-1)
                     listOfNames += "\n";
             }
+            //return the new string variable 
             return listOfNames;
         }
     }

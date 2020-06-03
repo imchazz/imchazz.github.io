@@ -12,13 +12,19 @@
 */
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
+    
+    //loop through numbers 1-100
     for (var i=1; i < 101; i++){
+        //if number divided by 15 does not have a remainder, it means it is a multiple of 5 and 3 because those are the only multiples of 15
         if (i % 15 == 0)
             console.log("FizzBuzz");
+        //decide if i is a multiple of 3
         else if (i % 3 == 0)
             console.log("Fizz");
+        //decide if i is a multiple of 5
         else if (i % 5 == 0)
             console.log("Buzz");
+        //print all other numbers
         else 
             console.log(i);
 }
