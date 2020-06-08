@@ -1,0 +1,64 @@
+
+////////////////////////////////////////////////////////////////////////////////
+// triangles ///////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+function triangles(num) {
+  //create var with one #, limit its size to num parameter, and add a # each increment.
+  for (var hash = "#"; hash.length <= num; hash += "#")
+    console.log(hash);
+}
+////////////////////////////////////////////////////////////////////////////////
+// fizzBuzz ////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+function fizzBuzz() {
+  for(var i = 1; i <= 15; i++){
+    //if number is divisible by 3 and 5, which is only 15, return fizzbuzz
+    if(i % 5 === 0 && i % 3 === 0)
+      console.log("fizzbuzz");
+    else if(i % 3 === 0) //if num is divisible by 3
+      console.log("fizz");
+    else if(i % 5 === 0) //if num is divisble by 5
+      console.log("buzz");
+    else //print number normally if otherwise.
+      console.log(i);
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// drawChessboard //////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+function drawChessboard(num) {
+  //new empty string
+  var board = "";
+  //create 2d array
+  for (var i = 0; i < num; i++) { //rows
+    for (var j = 0; j < num; j++) { //columns 
+      //on every odd space, add a space to board (picture spaces all on one line)
+      if ((j + i) % 2 == 0) {
+        board += " ";
+      //on every even space, have a #
+      } else {
+        board += "#";
+      }
+    }
+    //at the end of the row, create a new line
+    board += "\n";
+  }
+  
+  console.log(board);
+}
+////////////////////////////////////////////////////////////////////////////////
+// DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+if ((typeof process !== 'undefined') &&
+  (typeof process.versions.node !== 'undefined')) {
+  module.exports = {
+    triangles,
+    fizzBuzz,
+    drawChessboard,
+  };
+}
